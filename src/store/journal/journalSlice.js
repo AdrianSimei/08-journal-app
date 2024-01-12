@@ -29,7 +29,7 @@ export const journalSlice = createSlice({
             state.isSaving = false;
         },
 
-        setActionNote: (state, action) => {
+        setActiveNote: (state, action) => {
 
             state.active = action.payload;
             state.messageSaved = '';
@@ -88,7 +88,7 @@ export const {
     clearNoteLogout,
     deleteNoteById, 
     savingNewNote,
-    setActionNote,
+    setActiveNote,
     setNotes,
     setPhotosToActiveNote,
     setSaving,

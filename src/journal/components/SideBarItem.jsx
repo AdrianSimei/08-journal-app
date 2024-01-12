@@ -1,7 +1,7 @@
 import { TurnedInNot } from '@mui/icons-material'
 import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import { useMemo } from 'react'
-import { setActionNote } from '../../store/journal/journalSlice'
+import { setActiveNote } from '../../store/journal/journalSlice'
 import { useDispatch } from 'react-redux'
 
 export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
@@ -9,7 +9,7 @@ export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
     const dispatch = useDispatch();
 
     const onClickNote = () => {
-        dispatch(setActionNote({ title, body, id, date, imageUrls}))
+        dispatch(setActiveNote({ title, body, id, date, imageUrls}))
     }
 
     const newTitle = useMemo(() => {

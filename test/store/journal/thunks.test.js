@@ -2,7 +2,7 @@ import { startNewNote } from "../../../src/store/journal/thunks";
 
 describe('Pruebas en thunks', () => {
 
-    afterEach(() => jest.clearAllMocks());
+    beforeEach(() => jest.clearAllMocks());
     const dispatch = jest.fn();
     const getState = jest.fn();
 
@@ -12,6 +12,6 @@ describe('Pruebas en thunks', () => {
         getState.mockReturnValue({ auth: { uid } });
         await startNewNote()(dispatch, getState);
 
-    }, 10000);
+    }, 1000);
 
 });

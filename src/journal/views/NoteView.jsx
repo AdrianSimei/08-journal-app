@@ -4,8 +4,8 @@ import { ImageGallery } from "../components"
 import { useForm } from "../../hooks/useForm"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useMemo, useRef } from "react"
-// import { setActionNote } from "../../store/journal/journalSlice"
-import { setActionNote, startDeletingNote, startSaveNote, startUploadingFiles } from "../../store/journal"
+// import { setActiveNote } from "../../store/journal/journalSlice"
+import { setActiveNote, startDeletingNote, startSaveNote, startUploadingFiles } from "../../store/journal"
 import Swal from "sweetalert2"
 import 'sweetalert2/dist/sweetalert2.css'
 
@@ -25,7 +25,7 @@ export const NoteView = () => {
 
 
     useEffect(() => {
-        dispatch(setActionNote(formState));
+        dispatch(setActiveNote(formState));
     }, [formState])
 
     useEffect(() => {
